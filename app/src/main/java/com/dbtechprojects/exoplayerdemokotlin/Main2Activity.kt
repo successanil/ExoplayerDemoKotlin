@@ -14,5 +14,6 @@ class Main2Activity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this@Main2Activity,R.layout.activity_main_buttons)
 
+
     }
 }

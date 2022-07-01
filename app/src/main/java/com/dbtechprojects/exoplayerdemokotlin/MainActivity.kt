@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.dbtechprojects.exoplayerdemokotlin.viewmodel.SongViewModel
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.MediaMetadata
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity(), Player.Listener {
     @Inject
     lateinit var player: ExoPlayer
 
+    val songViewModel : SongViewModel by viewModels()
+
     private lateinit var playerView: PlayerView
     private lateinit var progressBar: ProgressBar
     private lateinit var titleTv: TextView
@@ -33,7 +37,7 @@ class MainActivity : AppCompatActivity(), Player.Listener {
 
         setupPlayer()
         addMP3()
-        addMP4Files()
+        //addMP4Files()
 
 
         // restore playstate on Rotation
@@ -65,9 +69,11 @@ class MainActivity : AppCompatActivity(), Player.Listener {
     }
 
     private fun addMP3() {
+
+        var list = songViewModel.getSongsUrls()
+
         // Build the media item.
-        val mediaItem = MediaItem.fromUri(getString(R.string.test_mp3))
-        player.setMediaItem(mediaItem)
+        val mediaItem = MediaItem.fromUri(list.get(0).songUrl)
         // Set the media item to be played.
         player.setMediaItem(mediaItem)
         // Prepare the player.
@@ -84,7 +90,7 @@ class MainActivity : AppCompatActivity(), Player.Listener {
         super.onResume()
         setupPlayer()
         addMP3()
-        addMP4Files()
+        //addMP4Files()
     }
 
     // handle loading
