@@ -6,17 +6,20 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.dbtechprojects.exoplayerplayground.R
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.MediaMetadata
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.common.collect.ImmutableList
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), Player.Listener {
-    private lateinit var player: ExoPlayer
+    @Inject
+    lateinit var player: ExoPlayer
+
     private lateinit var playerView: PlayerView
     private lateinit var progressBar: ProgressBar
     private lateinit var titleTv: TextView
