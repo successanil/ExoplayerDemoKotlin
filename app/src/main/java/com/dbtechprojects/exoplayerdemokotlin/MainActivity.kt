@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity(), Player.Listener {
     }
 
     private fun setupPlayer() {
-        player = ExoPlayer.Builder(this).build()
         playerView = findViewById(R.id.video_view)
         playerView.player = player
         player.addListener(this)
