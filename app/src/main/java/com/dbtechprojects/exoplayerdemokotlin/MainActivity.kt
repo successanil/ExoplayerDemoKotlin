@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(), Player.Listener {
             mediaItem2
         )
         player.addMediaItems(newItems)
+
         player.prepare()
     }
 
