@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.relsellglobal.exoplayerdemokotlin.databinding.ActivityMainButtonsBinding
 import com.relsellglobal.exoplayerdemokotlin.service.SoundService
+import com.relsellglobal.exoplayerdemokotlin.ui.HomeListFragment
 import com.relsellglobal.exoplayerdemokotlin.viewmodel.SongViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class Main2Activity : AppCompatActivity() {
@@ -17,6 +19,9 @@ class Main2Activity : AppCompatActivity() {
 
     lateinit var launchIntent : Intent
 
+    @Inject
+    lateinit var homeListFragment: HomeListFragment
+
     val songViewModel : SongViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +29,13 @@ class Main2Activity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this@Main2Activity,R.layout.activity_main_buttons)
 
-        binding.buttonStart.setOnClickListener{
-            //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
-           startSongService()
-        }
+        supportFragmentManager.beginTransaction().replace(R.id.rvLayout,homeListFragment).commit()
+
+
+//        binding.buttonStart.setOnClickListener{
+//            //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
+//           startSongService()
+//        }
 
         binding.buttonStop.setOnClickListener{
             //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
