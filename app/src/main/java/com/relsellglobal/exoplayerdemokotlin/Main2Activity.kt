@@ -50,6 +50,11 @@ class Main2Activity : AppCompatActivity() {
 
     }
 
+    override fun onPause() {
+        super.onPause()
+        stopSongService()
+    }
+
     private fun startSongService() {
         list = songViewModel.getSongsUrls()
         launchIntent = Intent(this@Main2Activity,SoundService::class.java)
