@@ -1,8 +1,8 @@
-package com.dbtechprojects.exoplayerdemokotlin.viewmodel
+package com.relsellglobal.exoplayerdemokotlin.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.dbtechprojects.exoplayerdemokotlin.models.Song
-import com.dbtechprojects.exoplayerdemokotlin.repository.SongRepository
+import com.relsellglobal.exoplayerdemokotlin.models.Song
+import com.relsellglobal.exoplayerdemokotlin.repository.SongRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

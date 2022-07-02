@@ -1,9 +1,10 @@
-package com.dbtechprojects.exoplayerdemokotlin
+package com.relsellglobal.exoplayerdemokotlin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.dbtechprojects.exoplayerdemokotlin.databinding.ActivityMainButtonsBinding
+import com.relsellglobal.exoplayerdemokotlin.databinding.ActivityMainButtonsBinding
 
 class Main2Activity : AppCompatActivity() {
 
@@ -13,6 +14,10 @@ class Main2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this@Main2Activity,R.layout.activity_main_buttons)
+
+        binding.buttonStart.setOnClickListener{
+            startActivity(Intent(this@Main2Activity,MainActivity::class.java))
+        }
 
 
     }

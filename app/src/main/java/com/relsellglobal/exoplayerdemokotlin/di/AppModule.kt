@@ -1,7 +1,7 @@
-package com.dbtechprojects.exoplayerdemokotlin.di
+package com.relsellglobal.exoplayerdemokotlin.di
 
 import android.content.Context
-import com.dbtechprojects.exoplayerdemokotlin.BaseApplication
+import com.relsellglobal.exoplayerdemokotlin.BaseApplication
 import com.google.android.exoplayer2.ExoPlayer
 import dagger.Module
 import dagger.Provides

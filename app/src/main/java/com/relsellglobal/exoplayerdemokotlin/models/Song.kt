@@ -1,4 +1,4 @@
-package com.dbtechprojects.exoplayerdemokotlin.models
+package com.relsellglobal.exoplayerdemokotlin.models
 
 class Song(songUrl:String,songName:String) {
     var songUrl = songUrl

@@ -1,4 +1,4 @@
-package com.dbtechprojects.exoplayerdemokotlin
+package com.relsellglobal.exoplayerdemokotlin
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

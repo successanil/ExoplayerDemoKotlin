@@ -1,4 +1,4 @@
-package com.dbtechprojects.exoplayerdemokotlin
+package com.relsellglobal.exoplayerdemokotlin
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.dbtechprojects.exoplayerdemokotlin.viewmodel.SongViewModel
+
+import com.relsellglobal.exoplayerdemokotlin.viewmodel.SongViewModel
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.MediaMetadata
@@ -51,17 +52,6 @@ class MainActivity : AppCompatActivity(), Player.Listener {
         }
     }
 
-    private fun addMP4Files() {
-        val mediaItem = MediaItem.fromUri(getString(R.string.media_url_mp4))
-        val mediaItem2 = MediaItem.fromUri(getString(R.string.myTestMp4))
-        val newItems: List<MediaItem> = ImmutableList.of(
-            mediaItem,
-            mediaItem2
-        )
-        player.addMediaItems(newItems)
-
-        player.prepare()
-    }
 
     private fun setupPlayer() {
         playerView = findViewById(R.id.video_view)
@@ -87,12 +77,6 @@ class MainActivity : AppCompatActivity(), Player.Listener {
         player.release()
     }
 
-    override fun onResume() {
-        super.onResume()
-        setupPlayer()
-        addMP3()
-        //addMP4Files()
-    }
 
     // handle loading
     override fun onPlaybackStateChanged(state: Int) {

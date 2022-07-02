@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dbtechprojects.exoplayerdemokotlin">
+    package="com.relsellglobal.exoplayerdemokotlin">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,23 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExoplayerDemoKotlin">
-        <activity android:name="com.dbtechprojects.exoplayerdemokotlin.MainActivity" android:exported="true"
+        <activity android:name=".MainActivity" android:exported="true"
             android:label="HiltExo" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:label="HiltExo"
-            android:name="com.dbtechprojects.exoplayerdemokotlin.Main2Activity" android:exported="true">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:label="HiltExo"
+            android:name=".Main2Activity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

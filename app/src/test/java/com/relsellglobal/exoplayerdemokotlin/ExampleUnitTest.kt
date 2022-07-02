@@ -1,4 +1,4 @@
-package com.dbtechprojects.exoplayerdemokotlin
+package com.relsellglobal.exoplayerdemokotlin
 
 import org.junit.Test
 

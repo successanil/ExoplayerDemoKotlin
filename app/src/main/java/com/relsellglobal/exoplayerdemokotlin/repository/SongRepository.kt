@@ -1,6 +1,6 @@
-package com.dbtechprojects.exoplayerdemokotlin.repository
+package com.relsellglobal.exoplayerdemokotlin.repository
 
-import com.dbtechprojects.exoplayerdemokotlin.models.Song
+import com.relsellglobal.exoplayerdemokotlin.models.Song
 import javax.inject.Inject
 
 class SongRepository @Inject constructor(){
