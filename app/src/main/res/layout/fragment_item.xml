@@ -19,6 +19,7 @@
                     <Button
                         android:text="@string/start"
                         android:id="@+id/buttonStart"
+                        android:textSize="12sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         />
@@ -28,6 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
                     android:text="Song name"
+                    android:fontFamily="@font/lobster_regular"
                     android:textSize="16sp"
                     android:textStyle="normal" />
 

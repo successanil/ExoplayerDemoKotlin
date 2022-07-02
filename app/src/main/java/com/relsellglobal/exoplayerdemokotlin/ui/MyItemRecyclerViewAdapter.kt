@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
@@ -44,9 +45,10 @@ class MyItemRecyclerViewAdapter (
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder1: RecyclerView.ViewHolder, position: Int) {
+        val holder = holder1 as ViewHolder
         val item = mValues[position]
-        //holder.mContentView.text = item.songName
+        holder.mContentView.text = item.songName
 
        // holder.mView.setOnClickListener({
             //lets do some thing
@@ -72,6 +74,7 @@ class MyItemRecyclerViewAdapter (
     class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
 
         val mContentView: TextView = mView.findViewById(R.id.content)
+        val startButton : Button = mView.findViewById(R.id.buttonStart)
 
         override fun toString(): String {
             return super.toString() + " '" + mContentView.text + "'"
