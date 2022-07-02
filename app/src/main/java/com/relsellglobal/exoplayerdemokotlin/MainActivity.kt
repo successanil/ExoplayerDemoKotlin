@@ -52,6 +52,17 @@ class MainActivity : AppCompatActivity(), Player.Listener {
         }
     }
 
+    private fun addMP4Files() {
+        val mediaItem = MediaItem.fromUri(getString(R.string.media_url_mp4))
+        val mediaItem2 = MediaItem.fromUri(getString(R.string.myTestMp4))
+        val newItems: List<MediaItem> = ImmutableList.of(
+            mediaItem,
+            mediaItem2
+        )
+        player.addMediaItems(newItems)
+
+        player.prepare()
+    }
 
     private fun setupPlayer() {
         playerView = findViewById(R.id.video_view)

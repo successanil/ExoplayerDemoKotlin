@@ -2,13 +2,22 @@ package com.relsellglobal.exoplayerdemokotlin
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.relsellglobal.exoplayerdemokotlin.databinding.ActivityMainButtonsBinding
+import com.relsellglobal.exoplayerdemokotlin.service.SoundService
+import com.relsellglobal.exoplayerdemokotlin.viewmodel.SongViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Main2Activity : AppCompatActivity() {
 
     lateinit var binding : ActivityMainButtonsBinding
+
+    lateinit var launchIntent : Intent
+
+    val songViewModel : SongViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,9 +25,26 @@ class Main2Activity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this@Main2Activity,R.layout.activity_main_buttons)
 
         binding.buttonStart.setOnClickListener{
-            startActivity(Intent(this@Main2Activity,MainActivity::class.java))
+            //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
+           startSongService()
+        }
+
+        binding.buttonStop.setOnClickListener{
+            //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
+            stopSongService()
         }
 
 
+    }
+
+    private fun startSongService() {
+        var list = songViewModel.getSongsUrls()
+        launchIntent = Intent(this@Main2Activity,SoundService::class.java)
+        launchIntent.putExtra("songUrl",list.get(1).songUrl)
+        startService(launchIntent)
+    }
+
+    private fun stopSongService() {
+        stopService(Intent(this@Main2Activity,SoundService::class.java))
     }
 }
