@@ -64,9 +64,14 @@ class Main2Activity : AppCompatActivity() {
     fun fragmentRVClickListener(pos : Int,actionSongService:Int) {
         if(actionSongService == 1) {
             launchIntent = Intent(this@Main2Activity, SoundService::class.java)
-            launchIntent.putExtra("songUrl", list.get(1).songUrl)
+            launchIntent.putExtra("songUrl", list.get(pos).songUrl)
             startService(launchIntent)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopSongService()
     }
 
 }

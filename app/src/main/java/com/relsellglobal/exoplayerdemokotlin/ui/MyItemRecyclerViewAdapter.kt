@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.relsellglobal.exoplayerdemokotlin.Main2Activity
 import com.relsellglobal.exoplayerdemokotlin.R
 import com.relsellglobal.exoplayerdemokotlin.databinding.FragmentItemBinding
 import com.relsellglobal.exoplayerdemokotlin.models.Song
@@ -50,19 +51,10 @@ class MyItemRecyclerViewAdapter (
         val item = mValues[position]
         holder.mContentView.text = item.songName
 
-       // holder.mView.setOnClickListener({
-            //lets do some thing
-//            try {
-//
-//                val des = if(activity is MainActivityWithNavBar) activity else null
-//                des?.launchDetailFragment(item)
-//            } catch (e:Exception) {
-//                e.printStackTrace()
-//            }
-
-
- //       })
-
+        holder.startButton.setOnClickListener{
+            val des = if(activity is Main2Activity) activity else null
+            des?.fragmentRVClickListener(position,1)
+        }
     }
 
     override fun getItemViewType(position: Int): Int {
